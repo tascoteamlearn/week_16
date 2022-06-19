@@ -13,7 +13,6 @@ import {Navbar, Container} from 'react-bootstrap'
 export default function Header() {
 
     const {state, dispatch} = useContext(AppContext)
-
     const {user} = state.user
 
   return (

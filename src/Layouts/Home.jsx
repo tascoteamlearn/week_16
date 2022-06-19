@@ -7,18 +7,19 @@ import {AppContext} from '../Context/AppContext'
 //Bootstrap
 import { Button, Form, Container } from 'react-bootstrap'
 
-export default function Home() {
+export default function Home({parentData, sendParentData}) {
 
     const {state, dispatch} = useContext(AppContext)
 
     const [userData, setUserData] = useState({
-        email:"",
+        username:"",
         password:""
     })
 
     const handleChangeUser = (e) =>{
         e.preventDefault()
-        dispatch({type:type.GET_USER_SUCCESS, user:userData})
+        // sendParentData({name: userData.username})
+        dispatch({type:type.GET_USER_SUCCESS, user:userData, token:"bearer token"})
     }
 
     const handleChangeData = (e) =>{

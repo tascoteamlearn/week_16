@@ -1,7 +1,7 @@
 import { useReducer } from 'react';
-import * as type from '../Types/User'
+import * as type from '../Types/Product'
 
-const userState = {
+const productState = {
     loading:false,
     user: null,
     token: null,
@@ -9,7 +9,8 @@ const userState = {
     success:null,
 }
 
-const userReducer = (state, action)=>{
+const productReducer = (state, action)=>{
+    
     switch(action.type) {
         case type.GET_USER_REQUEST:
             return Object.assign({}, state, {
@@ -31,9 +32,13 @@ const userReducer = (state, action)=>{
                 success: null,
                 loading: false,
             });
+        case type.COUNT_MONEY:
+            return Object.assign({}, state,{
+                count:1000,
+            })
         default:
             return state;
     }
 }
 
-export {userState, userReducer}
+export {productState, productReducer}
